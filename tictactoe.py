@@ -48,13 +48,13 @@ def check_for_winner():
     elif board[0][2] == board[1][1] == board[2][0] and board[0][2]!= 0:
         winner = board[0][2]
     if all([all(row) for row in board]) and winner is None:
-        winner = "win"
+        winner = "draw"
     if winner:
         declare_winner(winner)
 
 def declare_winner(winner):
-    if winner == "Win":
-        message = "Victoir"
+    if winner == "draw":
+        message = "Match nul!"
     else:
         message = f"Joueur {winner} gagne!"
     answer = messagebox.askyesno("Game Over", message + " Une autre partie?")
